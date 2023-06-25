@@ -10,11 +10,12 @@ import RecipeDetailContent from "../components/RecipeDetailContent";
 
 function GenerateRecipe() {
   const navigate = useNavigate();
-  const { isAuthenticated, user, isLoading, setIsLoading } =
-    useContext(AppContext);
+  const { isAuthenticated, user } = useContext(AppContext);
   const [recipe, setRecipe] = useState(null);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleGenerate(query) {
     console.log("generating for query: ", query);
@@ -59,6 +60,11 @@ function GenerateRecipe() {
     <>
       <Navbar active={"generate-recipe"} />
       <div className="generate-container">
+        {isLoading && (
+          <div className="loading-screen">
+            <div className="spinner" />
+          </div>
+        )}
         <h1>Generate Recipe using AI</h1>
         <SearchField
           placeholder={"Enter Ingredients or Dish"}

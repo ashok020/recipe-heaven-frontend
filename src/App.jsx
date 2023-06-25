@@ -22,22 +22,8 @@ function App() {
   const { isAuthenticated, isLoading, setIsLoading, user } =
     useContext(AppContext);
 
-  const [isAppLoading, setIsAppLoading] = useState(true);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsAppLoading(isLoading);
-    }, 1000);
-    return () => clearTimeout(timeout);
-  }, [isLoading]);
-
   return (
     <div className="App">
-      {isAppLoading && (
-        <div className="loading-screen">
-          <div className="spinner" />
-        </div>
-      )}
       <Router>
         <Routes>
           <Route

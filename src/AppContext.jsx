@@ -9,7 +9,7 @@ export const AppContextProvider = ({ children }) => {
     !!localStorage.getItem("token")
   );
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getUser();
@@ -25,14 +25,11 @@ export const AppContextProvider = ({ children }) => {
 
   async function getUser(token) {
     try {
-      setIsLoading(true);
       const user = await API.get("/user");
-      setIsLoading(false);
       localStorage.setItem("user", JSON.stringify(user));
       setUser(user);
       setIsAuthenticated(true);
     } catch (err) {
-      setIsLoading(false);
       console.error(err);
     }
   }

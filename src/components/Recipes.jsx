@@ -9,7 +9,7 @@ function Recipes({ recipes, currentPage, totalPages, handlePageChange }) {
     <div className="recipes-container">
       <div className="recipe-list" key="recipe-list">
         {recipes.length === 0 ? (
-          <h2>No Recipes ...</h2>
+          <h2>Loading Recipes Please Wait...</h2>
         ) : (
           recipes.map((recipe) => (
             <RecipeCard recipe={recipe} key={recipe.recipeId} />
