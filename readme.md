@@ -1,4 +1,4 @@
-# Recipe-heaven webapp frontend
+# Recipe Heaven Webapp Frontend
 
 This is the frontend implementation of the Recipe Heaven web application. It provides web interface fot user authentication, user registration, fetching recipe data,editing and saving user-created recipes, and generating recipes using Chat GPT.
 
