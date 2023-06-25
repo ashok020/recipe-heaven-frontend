@@ -4,7 +4,7 @@ This is the frontend implementation of the Recipe Heaven web application. It pro
 
 Created for Ecowiser FSD Task.
 
-### [Live Deployed Link](https://recipe-heaven.vercel.app/)
+### [Live Deployed Link](https://rainbow-brigadeiros-7f3100.netlify.app/)
 
 ### [Backend Repo Link](https://github.com/ashok020/recipe-heaven-backend)
 
