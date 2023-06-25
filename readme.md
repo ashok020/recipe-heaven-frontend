@@ -42,3 +42,24 @@ Defined Folder Structure:
 - Axios
 
 ## Screenshots
+
+- Home Page
+
+  - ![Screenshot](https://github.com/ashok020/recipe-heaven-frontend/blob/main/screenshots/home%20page.png?raw=true)
+
+- Recipe Generate using Chat GPT
+
+  - ![Screenshot](https://github.com/ashok020/recipe-heaven-frontend/blob/main/screenshots/generate.png?raw=true)
+
+- Recipe Search
+
+  - ![Screenshot](https://github.com/ashok020/recipe-heaven-frontend/blob/main/screenshots/search.png)
+
+- Recipe Edit
+
+  - ![Screenshot](https://github.com/ashok020/recipe-heaven-frontend/blob/main/screenshots/edit.png?raw=true)
+
+- Recipe View
+  - ![Screenshot](https://github.com/ashok020/recipe-heaven-frontend/blob/main/screenshots/view.png?raw=true)
+
+-Profile Page - ![Screenshot](https://github.com/ashok020/recipe-heaven-frontend/blob/main/screenshots/profile.png)
