@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import API from "../utils/api";
 import { AppContext } from "../AppContext";
+import { useContext } from "react";
 
 function Register() {
   const { isLoading, setIsLoading } = useContext(AppContext);

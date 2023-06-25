@@ -4,6 +4,12 @@ This is the frontend implementation of the Recipe Heaven web application. It pro
 
 Created for Ecowiser FSD Task.
 
+### [Live Deployed Link]()
+
+### [Backend Repo Link](https://github.com/ashok020/recipe-heaven-backend)
+
+### [Backend Deployed Link](https://breakable-plum-dalmatian.cyclic.app)
+
 ## My Process
 
 - Designed the basic plan of how my folder structure will look and what necessary files should be in React.
@@ -34,3 +40,5 @@ Defined Folder Structure:
 - Context API and hooks
 - Vite
 - Axios
+
+## Screenshots

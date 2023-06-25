@@ -17,7 +17,6 @@ import "./App.css";
 import GenerateRecipe from "./pages/GenerateRecipe";
 import CreateRecipe from "./pages/CreateRecipe";
 import EditRecipePage from "./pages/EditRecipePage";
-import ReactLoading from "react-loading";
 
 function App() {
   const { isAuthenticated, isLoading, setIsLoading, user } =
