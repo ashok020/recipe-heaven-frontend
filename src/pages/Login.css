@@ -1,0 +1,84 @@
+.login-page,
+.register-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.login-form-container,
+.register-form-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background-color-alpha);
+  border-radius: var(--border-radius-med);
+  box-shadow: var(--shadow-light);
+}
+
+.login-form-container form,
+.register-form-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.login-form-container h2,
+.register-form-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-color-alt);
+}
+
+.form-group {
+  margin-bottom: 0.4rem;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-color-alt);
+}
+
+.login-page input,
+.register-page input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-med);
+}
+
+.gender-radio-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  color: var(--text-color-alt);
+}
+
+.message {
+  padding: 0.5rem 1rem;
+  font-weight: 400;
+  text-align: center;
+  background-color: var(--green);
+  border-radius: var(--border-radius);
+}
+.error {
+  background-color: var(--red);
+  color: var(--text-color-btn);
+}
+
+.register-page {
+  transform: scale(0.9);
+}
+
+@media (max-width: 480px) {
+  .login-form-container,
+  .register-form-container {
+    width: 100%;
+    padding: 1rem;
+  }
+}

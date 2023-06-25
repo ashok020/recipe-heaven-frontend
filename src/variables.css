@@ -1,0 +1,88 @@
+:root {
+  --primary-color: #35b8bfc1;
+  --second-color: #35b8bfd1;
+  --third-color: #0af48b8e;
+  --fourth-color: #b1fdd629;
+
+  --red: #d24e55e3;
+  --blue: #432371dd;
+  --green: #a3f570eb;
+  --pink: #f22a59cf;
+
+  --logo-color: var(--primary-color);
+  --border-radius: 5px;
+  --border-radius-med: 10px;
+
+  --border-color: var(--third-color);
+
+  --text-color: #191276;
+  --text-color-alt: #19194b;
+  --text-color-secondary: #19194b;
+
+  --text-color-btn: #fcfaea;
+
+  --background-color: #f5efc3;
+  --background-color-secondary: #fffefe69;
+  --background-color-alpha: #fcfaeac9;
+  --background-color-alpha2: #8afaf827;
+  --background-color-alpha3: #0080ff27;
+  --background-color-alpha4: #75d3d15f;
+  --time: 0.1s;
+
+  --shadow-light: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  --shadow-med: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  --shadow-heavy: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+body.dark-theme {
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  /* Primary Colors */
+  --primary-color: #35b8bfc1;
+  --second-color: #35b8bfd1;
+  --third-color: #0af48b8e;
+  --fourth-color: #b1fdd629;
+
+  /* Dark Theme Colors */
+  --red: #d24e55e3;
+  --blue: #2b3858;
+  --green: #a3f570eb;
+  --pink: #f22a59cf;
+
+  /* Logo and Border */
+  --logo-color: var(--primary-color);
+  --border-radius: 5px;
+  --border-radius-med: 10px;
+  --border-color: var(--third-color);
+
+  /* Text Colors */
+  --text-color: #ffffff;
+  --text-color-alt: #a5b0d0;
+  --text-color-secondary: #a5b0d0;
+
+  /* Button Text Color */
+  --text-color-btn: #ffffff;
+
+  /* Background Colors */
+  --background-color: #19194b;
+  --background-color-secondary: #272748;
+  --background-color-alpha: #2a2a4f;
+  --background-color-alpha2: #1e1e3a;
+  --background-color-alpha3: #203f67;
+  --background-color-alpha4: #12123a;
+
+  /* Transition */
+  --time: 0.1s;
+
+  /* Shadows */
+  --shadow-light: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  --shadow-med: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  --shadow-heavy: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}

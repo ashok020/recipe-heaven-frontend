@@ -1,0 +1,141 @@
+@import "./variables.css";
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+
+:root {
+  font-family: "Roboto", Poppins, Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--background-color-alpha3);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--third-color);
+  border-radius: 10px;
+}
+
+button {
+  align-self: center;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius-med);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all var(--time) ease-in-out;
+  margin: 5px 5px;
+  color: var(--text-color-btn);
+  background-color: var(--third-color);
+}
+
+button:hover,
+button:active {
+  background-color: var(--primary-color);
+}
+
+button:disabled {
+  background-color: var(--background-color-alpha3);
+  cursor: not-allowed;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 1px auto -webkit-focus-ring-color;
+}
+.btn,
+.btn-small,
+.btn-active {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-med);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all var(--time) ease-in-out;
+  margin: 5px 5px;
+  color: var(--text-color-btn);
+  background-color: var(--third-color);
+}
+.btn-small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+  background-color: unset;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+}
+.btn-active {
+  opacity: 0.7;
+  pointer-events: none;
+  cursor: crosshair;
+  background-color: var(--primary-color);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 5px;
+  color: var(--text-color-btn);
+}
+
+.item-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-center-gap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    top: 80%;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popMessageAnimation {
+  from {
+    top: -10%;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 15px;
+  }
+}

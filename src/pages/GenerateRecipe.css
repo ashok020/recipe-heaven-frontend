@@ -1,0 +1,14 @@
+.generate-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.save-btn {
+  font-size: 1.5rem !important;
+  min-width: 20%;
+  text-align: center;
+}

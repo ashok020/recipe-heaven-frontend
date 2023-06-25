@@ -1,0 +1,125 @@
+.comment-section,
+.comment-section-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+.comment-form {
+  grid-area: search-form;
+  background-color: transparent;
+  width: 100%;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  box-shadow: var(--shadow-light);
+  transition: all var(--time) ease-in-out;
+  max-width: 25rem;
+  padding: 0.5rem 1rem;
+}
+
+.comment-form input {
+  background-color: transparent;
+  margin-right: 5px;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 100;
+  width: 100%;
+  line-height: 1.5;
+  height: 100%;
+}
+.comment-form .icon {
+  color: var(--text-color-alt);
+  cursor: pointer;
+}
+
+.comment-form .comment-form-icon:hover .icon {
+  transition: all var(--time) ease-in-out;
+  transform: translateX(2px);
+  color: var(--red);
+}
+
+.comment-form .comment-form-icon:active .icon {
+  transition: all var(--time) ease-in-out;
+  transform: translateX(4px);
+  color: var(--red);
+}
+.comment-form:hover,
+.comment-form:focus-within {
+  transform: scale(1.05);
+  background-color: var(--background-color-secondary);
+}
+
+.comment {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 50rem;
+
+  border-radius: var(--border-radius-med);
+  line-height: 2;
+  flex-wrap: wrap;
+}
+
+.comment-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: var(--border-radius-med);
+  border-end-end-radius: 40%;
+  background-color: var(--background-color-alpha3);
+}
+.comment-text {
+  padding: 0.5rem 4.5rem;
+  flex: 100;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-color-alt);
+  border-radius: 5rem;
+  /* border-top-left-radius: 40%; */
+  border-bottom-left-radius: 10rem;
+  background-color: var(--background-color-alpha3);
+}
+.comment-text p {
+  height: fit-content;
+  word-break: break-all;
+}
+.comment-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-med);
+  cursor: pointer;
+  padding: 0.3rem;
+  flex: 1;
+  transition: all var(--time) ease-in-out;
+}
+
+.comment-delete .icon {
+  color: var(--red);
+}
+
+.comment-delete:hover {
+  background-color: var(--red);
+}
+
+.comment-delete:hover .icon {
+  color: white;
+  transform: scale(1.1) translateY(-2px) rotate(-5deg);
+  transition: all var(--time) ease-in-out;
+}
+
+.no-comment {
+  padding: 0.4rem !important;
+  color: var(--text-color) !important;
+}

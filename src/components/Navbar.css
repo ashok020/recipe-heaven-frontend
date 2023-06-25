@@ -1,0 +1,73 @@
+.navbar {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr auto auto;
+
+  grid-template-areas: "logo search-form search-form nav-buttons user-nav";
+  gap: 0.5rem 1rem;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.5rem 1.5rem;
+  border-bottom: 2px solid var(--third-color);
+  background-color: var(--fourth-color);
+}
+
+.logo {
+  grid-area: logo;
+  font-weight: 600;
+  font-size: 1.5rem;
+  user-select: none;
+  cursor: pointer;
+  color: var(--third-color);
+}
+.logo span {
+  color: var(--logo-color);
+  font-weight: 800;
+}
+
+.nav-buttons {
+  grid-area: nav-buttons;
+}
+
+.user-nav {
+  grid-area: user-nav;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 3px 5px;
+}
+
+.navbar .dropdown-menu {
+  z-index: 1000;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navbar {
+    grid-template-columns: auto 1fr 1fr auto auto;
+    grid-template-rows: auto auto;
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+    grid-template-areas:
+      "logo . . nav-buttons user-nav"
+      "search-form search-form search-form search-form search-form";
+  }
+  .nav-buttons {
+    font-size: 0.5rem;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 480px) {
+  .navbar {
+    grid-template-columns: 1fr auto;
+
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "logo user-nav"
+      "nav-buttons nav-buttons"
+      "search-form search-form";
+  }
+  .logo {
+    align-self: center;
+    justify-self: center;
+  }
+}

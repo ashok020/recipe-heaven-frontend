@@ -1,0 +1,8 @@
+.recipe-edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}

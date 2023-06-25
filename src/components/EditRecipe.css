@@ -1,0 +1,130 @@
+.recipe-edit {
+  padding: 1rem;
+}
+.recipe-edit .recipe-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recipe-ing-ul {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start !important;
+  gap: 1rem;
+  width: 100%;
+}
+
+.recipe-ing-edit {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  gap: 10px;
+  width: 100%;
+}
+.recipe-ing-edit .btn {
+  background-color: var(--background-color-alpha);
+  padding: 0.1rem 0.52rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+}
+.recipe-ing-edit .btn .icon {
+  color: var(--red);
+}
+
+.recipe-ing-edit .btn:hover {
+  background-color: var(--red);
+  color: white;
+}
+.recipe-ing-edit .btn:hover .icon {
+  color: white !important;
+}
+
+.add-btn {
+  font-weight: 200;
+}
+.add-btn:hover {
+  background-color: var(--green) !important;
+}
+.add-btn:hover .icon {
+  color: white;
+}
+
+textarea,
+.recipe-ing-edit input {
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-alpha2);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+textarea:focus,
+.recipe-edit input:focus {
+  outline: none;
+  box-shadow: var(--shadow-med);
+  border-color: var(--border-radius-med);
+  transition: all var(--time) ease-in-out;
+  transform: scale(1.05);
+  background-color: var(--background-color-alpha);
+}
+
+textarea {
+  width: 70vw;
+  height: 10rem;
+  resize: none;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: inline-block;
+  background-color: var(--background-color-alpha2);
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.file-label:hover {
+  background-color: var(--third-color);
+}
+
+.file-label::after {
+  content: "Upload a new recipe image";
+}
+.image-upload-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-serves,
+.recipe-time {
+  min-width: 5rem;
+  max-width: 10rem;
+  background-color: var(--background-color-alpha2);
+}
+
+.recipe-title-edit {
+  width: 60%;
+  padding: 0.5rem 2rem;
+  background-color: var(--background-color-alpha2);
+}
+
+@media (max-width: 768px) {
+  textarea {
+    width: 100% !important;
+    height: 12rem;
+  }
+  .recipe-title-edit {
+    width: 90%;
+  }
+}
