@@ -3,7 +3,7 @@ import axios from "axios";
 const token = localStorage.getItem("token");
 
 const API = axios.create({
-  baseURL: "/api",
+  baseURL: "https://breakable-plum-dalmatian.cyclic.app",
   headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,

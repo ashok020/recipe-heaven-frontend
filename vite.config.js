@@ -10,13 +10,4 @@ export default defineConfig({
       enforceReactRefresh: false,
     }),
   ],
-  server: {
-    proxy: {
-      "/api": {
-        target: "https://breakable-plum-dalmatian.cyclic.app",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
-    },
-  },
 });
