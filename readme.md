@@ -1,6 +1,6 @@
 # Recipe-heaven webapp frontend
 
-This is the frontend implementation of the Recipe Haven web application. It provides web interface fot user authentication, user registration, fetching recipe data,editing and saving user-created recipes, and generating recipes using Chat GPT.
+This is the frontend implementation of the Recipe Heaven web application. It provides web interface fot user authentication, user registration, fetching recipe data,editing and saving user-created recipes, and generating recipes using Chat GPT.
 
 Created for Ecowiser FSD Task.
 
