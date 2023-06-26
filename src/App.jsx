@@ -19,8 +19,7 @@ import CreateRecipe from "./pages/CreateRecipe";
 import EditRecipePage from "./pages/EditRecipePage";
 
 function App() {
-  const { isAuthenticated, isLoading, setIsLoading, user } =
-    useContext(AppContext);
+  const { isAuthenticated, user } = useContext(AppContext);
 
   return (
     <div className="App">

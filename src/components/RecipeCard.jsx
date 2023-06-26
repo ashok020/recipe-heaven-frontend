@@ -9,7 +9,7 @@ import {
 } from "react-icons/ai";
 import { PiDotsThreeCircleVertical } from "react-icons/pi";
 
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import API from "../utils/api";
 import { useNavigate } from "react-router-dom";
 import Dropdown from "./Dropdown";
@@ -18,8 +18,7 @@ import { ImagePreview } from "./ImagePreview";
 import { PopMessage } from "./PopMessage";
 
 function RecipeCard({ recipe }) {
-  const { user, setIsLoading, isLoading, isAuthenticated } =
-    useContext(AppContext);
+  const { user, isAuthenticated } = useContext(AppContext);
   const navigate = useNavigate();
   const [isLiked, setIsLiked] = useState(recipe.isLiked);
   const [likesCount, setLikesCount] = useState(recipe.likesCount);

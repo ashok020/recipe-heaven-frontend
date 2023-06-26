@@ -9,8 +9,6 @@ export const AppContextProvider = ({ children }) => {
     !!localStorage.getItem("token")
   );
 
-  const [isLoading, setIsLoading] = useState(false);
-
   useEffect(() => {
     getUser();
   }, []);
@@ -57,8 +55,6 @@ export const AppContextProvider = ({ children }) => {
         handleLogin,
         handleLogout,
         handleUpdateUser,
-        isLoading,
-        setIsLoading,
       }}
     >
       {children}

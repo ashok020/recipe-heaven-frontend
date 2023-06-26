@@ -1,20 +1,18 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import API from "../utils/api";
 import Recipes from "./Recipes";
 import Navbar from "./Navbar";
-import { useNavigate } from "react-router-dom";
 import "./PageContainer.css";
-import { AppContext } from "../AppContext";
 
 function PageContainer({ active }) {
-  const { user, isAuthenticated, setIsLoading, isLoading } =
-    useContext(AppContext);
   const [recipes, setRecipes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [search, setSearch] = useState("");
   const [update, setUpdate] = useState(false);
   const limit = 10;
+
+  const [msg, setMsg] = useState("Fetching Recipes ...");
 
   useEffect(() => {
     async function getRecipes() {
@@ -23,14 +21,15 @@ function PageContainer({ active }) {
       }&search=${search}&page=${currentPage}&limit=${limit}`;
 
       try {
-        setIsLoading(true);
         const fetchedRecipes = await API.get("/recipes" + query);
-        setIsLoading(false);
+        if (fetchedRecipes.list.length === 0) {
+          setMsg("No recipes found");
+        }
         setRecipes(fetchedRecipes.list);
         setCurrentPage(parseInt(fetchedRecipes.currentPage));
         setTotalPages(parseInt(fetchedRecipes.totalPages));
       } catch (err) {
-        setIsLoading(false);
+        setMsg("Error fetching recipes");
         console.log(err);
       }
     }
@@ -59,6 +58,7 @@ function PageContainer({ active }) {
       <div className="page">
         <Recipes
           recipes={recipes}
+          msg={msg}
           currentPage={currentPage}
           totalPages={totalPages}
           handlePageChange={handlePageChange}

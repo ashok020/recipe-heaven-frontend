@@ -9,8 +9,7 @@ import { AppContext } from "../AppContext";
 import { SearchField } from "./SearchField";
 
 export default function CommentSection({ id, updateCommentsCount }) {
-  const { user, isLoading, setIsLoading, isAuthenticated } =
-    useContext(AppContext);
+  const { user, isAuthenticated } = useContext(AppContext);
   const navigate = useNavigate();
   const [comments, setComments] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,11 +18,9 @@ export default function CommentSection({ id, updateCommentsCount }) {
   const limit = 10;
 
   async function getComments() {
-    setIsLoading(true);
     const fetchedComments = await API.get(
       `/recipes/${id}/comments/?page=${currentPage}&limit=${limit}`
     );
-    setIsLoading(false);
     setComments(fetchedComments.list);
     setCurrentPage(parseInt(fetchedComments.currentPage));
     setTotalPages(parseInt(fetchedComments.totalPages));

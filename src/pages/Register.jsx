@@ -3,11 +3,8 @@ import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import API from "../utils/api";
-import { AppContext } from "../AppContext";
-import { useContext } from "react";
 
 function Register() {
-  const { isLoading, setIsLoading } = useContext(AppContext);
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -46,7 +43,6 @@ function Register() {
   const handleRegisterFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      setIsLoading(true);
       const res = await API.post("/register", {
         name,
         username,
@@ -55,7 +51,6 @@ function Register() {
         age,
         gender,
       });
-      setIsLoading(false);
       setMessage("Success! you can login now");
       setTimeout(() => {
         setMessage("");
@@ -63,7 +58,6 @@ function Register() {
         navigate("/login");
       }, 1500);
     } catch (err) {
-      setIsLoading(false);
       console.error(err);
       if (err.response.data) setError(err.response.data.error);
       else setError("Something went wrong");

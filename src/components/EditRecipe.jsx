@@ -1,16 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CiTimer } from "react-icons/ci";
 import { FaXmark, FaPlus } from "react-icons/fa6";
 import { PiCookingPot } from "react-icons/pi";
-import { AppContext } from "../AppContext";
 import "./EditRecipe.css";
 import { convertToBase64 } from "../utils/img";
 import { ImagePreview } from "./ImagePreview";
 
 function EditRecipe({ recipe, save, setSave, handleSave, setMessage }) {
-  const { isAuthenticated, isLoading, setIsLoading, user } =
-    useContext(AppContext);
-
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [ingredients, setIngredients] = useState([]);

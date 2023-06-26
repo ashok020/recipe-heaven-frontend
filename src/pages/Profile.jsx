@@ -17,8 +17,7 @@ import API from "../utils/api";
 import { useNavigate } from "react-router-dom";
 
 function Profile() {
-  const { isAuthenticated, user, handleUpdateUser, isLoading, setIsLoading } =
-    useContext(AppContext);
+  const { isAuthenticated, user, handleUpdateUser } = useContext(AppContext);
   const navigate = useNavigate();
   const [isEditMode, setIsEditMode] = useState(false);
   const [name, setName] = useState(user.name);

@@ -9,24 +9,22 @@ import API from "../utils/api";
 function EditRecipePage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { isAuthenticated, user, isLoading, setIsLoading } =
-    useContext(AppContext);
+  const { isAuthenticated, user } = useContext(AppContext);
   const [recipe, setRecipe] = useState(null);
   const [save, setSave] = useState(false);
 
   const [message, setMessage] = useState("");
+  const [msg, setMsg] = useState("Fetching Recipe details...");
 
   useEffect(() => {
     if (!id) return;
     async function getRecipe() {
       try {
-        setIsLoading(true);
         const fetchedRecipe = await API.get("/recipes/" + id);
-        setIsLoading(false);
         setRecipe(fetchedRecipe.recipe);
       } catch (err) {
-        setIsLoading(false);
         setMessage({ error: "Error fetching recipe" });
+        setMsg("Recipe not found");
       }
     }
     getRecipe();
@@ -37,15 +35,12 @@ function EditRecipePage() {
   }
   async function handleSave(recipe) {
     try {
-      setIsLoading(true);
       const res = await API.put("/recipes/" + id, recipe);
-      setIsLoading(false);
       setMessage("Saved successfully");
       setTimeout(() => {
         navigate("/recipes/" + id);
       }, 2000);
     } catch (err) {
-      setIsLoading(false);
       setMessage({ error: "Error saving recipe" });
     }
   }
@@ -78,7 +73,7 @@ function EditRecipePage() {
             setSave={setSave}
           />
         )}
-        {!recipe && <h2>Recipe not found</h2>}
+        {!recipe && <h2>{msg}</h2>}
       </div>
     </>
   );

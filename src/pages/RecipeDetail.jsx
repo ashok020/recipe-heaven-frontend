@@ -19,8 +19,7 @@ import Dropdown from "../components/Dropdown";
 import { PopMessage } from "../components/PopMessage";
 
 function RecipeDetail() {
-  const { isAuthenticated, user, handleLogout, isLoading, setIsLoading } =
-    useContext(AppContext);
+  const { isAuthenticated, user, handleLogout } = useContext(AppContext);
 
   const { id } = useParams();
   const [recipe, setRecipe] = useState({});
@@ -30,16 +29,19 @@ function RecipeDetail() {
   const [showPopMessage, setShowPopMessage] = useState(false);
   const navigate = useNavigate();
   const popMessageTime = 1.5;
+  const [msg, setMsg] = useState("Fetching Recipe...");
 
   useEffect(() => {
     async function getRecipe() {
-      setIsLoading(true);
-      const fetchedRecipe = await API.get("/recipes/" + id);
-      setIsLoading(false);
-      setRecipe(fetchedRecipe);
-      setIsLiked(fetchedRecipe.liked);
-      setLikesCount(fetchedRecipe.likesCount);
-      setCommentsCount(fetchedRecipe.commentsCount);
+      try {
+        const fetchedRecipe = await API.get("/recipes/" + id);
+        setRecipe(fetchedRecipe);
+        setIsLiked(fetchedRecipe.liked);
+        setLikesCount(fetchedRecipe.likesCount);
+        setCommentsCount(fetchedRecipe.commentsCount);
+      } catch (err) {
+        setMsg("Recipe not found");
+      }
     }
     getRecipe();
   }, []);
@@ -88,7 +90,7 @@ function RecipeDetail() {
       {!(recipe && Object.keys(recipe).length) && (
         <div className="recipe-detail">
           <div className="recipe-block recipe-title-header">
-            <h2 className="recipe-title">This Recipe does not exsits! </h2>
+            <h2 className="recipe-title"> {msg} </h2>
           </div>
         </div>
       )}

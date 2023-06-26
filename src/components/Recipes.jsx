@@ -3,13 +3,13 @@ import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
 
 import "./Recipes.css";
 
-function Recipes({ recipes, currentPage, totalPages, handlePageChange }) {
+function Recipes({ recipes, currentPage, totalPages, handlePageChange, msg }) {
   if (currentPage > totalPages) currentPage = totalPages;
   return (
     <div className="recipes-container">
       <div className="recipe-list" key="recipe-list">
         {recipes.length === 0 ? (
-          <h2>Loading Recipes Please Wait...</h2>
+          <h2>{msg}</h2>
         ) : (
           recipes.map((recipe) => (
             <RecipeCard recipe={recipe} key={recipe.recipeId} />

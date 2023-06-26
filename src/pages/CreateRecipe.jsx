@@ -9,8 +9,7 @@ import API from "../utils/api";
 function CreateRecipe() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { isAuthenticated, user, isLoading, setIsLoading } =
-    useContext(AppContext);
+  const { isAuthenticated, user } = useContext(AppContext);
   const [recipe, setRecipe] = useState(location.state || null);
   const [save, setSave] = useState(false);
 
@@ -25,9 +24,7 @@ function CreateRecipe() {
   }
   async function handleSave(recipe) {
     try {
-      setIsLoading(true);
       const res = await API.post("/recipes", recipe);
-      setIsLoading(false);
       setMessage("Saved successfully");
 
       setTimeout(() => {
@@ -35,7 +32,6 @@ function CreateRecipe() {
       }, 2000);
     } catch (err) {
       console.log(err);
-      setIsLoading(false);
       setMessage({ error: "Error saving recipe" });
     }
   }

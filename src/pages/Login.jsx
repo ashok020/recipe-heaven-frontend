@@ -6,8 +6,7 @@ import API from "../utils/api";
 import { AppContext } from "../AppContext";
 function Login() {
   const navigate = useNavigate();
-  const { handleLogin, handleLogout, isLoading, setIsLoading } =
-    useContext(AppContext);
+  const { handleLogin, handleLogout } = useContext(AppContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -24,18 +23,15 @@ function Login() {
   const handleLoginFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      setIsLoading(true);
       const res = await API.post("/login", {
         username,
         password,
       });
       const token = await res.token;
-      setIsLoading(false);
       handleLogin(token);
       setMessage("Sucess! Redirecting to Home");
       setTimeout(() => navigate("/"), 1500);
     } catch (err) {
-      setIsLoading(false);
       if (err.response.data) setError(err.response.data.error);
       else setError("Something went wrong");
     }
